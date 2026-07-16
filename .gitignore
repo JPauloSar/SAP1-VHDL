@@ -1,0 +1,50 @@
+# =========================
+# Lixo de Sistema Operacional
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*~
+
+# =========================
+# Intel/Altera (Quartus)
+# =========================
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+*.rpt
+*.summary
+*.sof
+*.pof
+*.pin
+*.qws
+*.bak
+*.smsg
+
+# =========================
+# Xilinx (Vivado)
+# =========================
+*.jou
+*.log
+*.str
+*.pb
+*.wdf
+*.dir/
+.Xil/
+*.bit
+*.hw/
+*.sim/
+*.runs/
+*.cache/
+
+# =========================
+# Simuladores (ModelSim / GHDL / GTKWave)
+# =========================
+work/
+transcript
+*.wlf
+*.vcd
+*.ghw
+*.cf
