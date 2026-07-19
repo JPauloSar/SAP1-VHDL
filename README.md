@@ -1,13 +1,11 @@
-```markdown
-# SAP-1: Planejamento, Diretrizes e Organização do Repositório
 
-Este é um documento temporário de alinhamento interno para o desenvolvimento do nosso SAP-1 em VHDL e hardware físico. Ele estabelece a estrutura do projeto, as regras de versionamento e o fluxo de trabalho inicial que todos devemos seguir.
+# Sobre a Organização do Repositório
+
+Esse Readme é só uma versão temporária de alinhamento pro nosso SAP-1 em VHDL. Ele estabelece a estrutura do projeto, as regras de versionamento e o fluxo de trabalho inicial que todos vamos seguir. Recomendo que todos leiam com algum cuidado para evitar dores de cabeça.
 
 ---
 
 ## 📂 Estrutura de Pastas
-
-Para manter o repositório limpo e evitar conflitos de mesclagem (*merge conflicts*), utilizaremos estritamente a seguinte estrutura de diretórios:
 
 ```text
 sap1-projeto/
@@ -21,23 +19,20 @@ sap1-projeto/
 ├── CONTRIBUTORS.md  # Registro oficial de autoria e divisão de tarefas da equipe
 ├── LICENSE          # Termos de uso e proteção legal do projeto (Licença MIT)
 └── README.md        # Este guia
-
 ```
+---
+
+## Workflow
+
+1. **Proteção da Branch `main`:** Nunca faça commits diretos na `main`. *(Sujeito a Paulada)*. Toda alteração deve ser feita em uma branch separada e integrada via Pull Request (PR).
+2. **Uso do `.gitignore`:** Arquivos temporários de compilação, logs e binários gerados pelas IDEs não entram no repositório. O Git local vai ignorar isso automaticamente.
+3. **Validação Obrigatória:** Qualquer módulo em `hdl/` só entra na `main` se tiver um testbench correspondente funcional em `sim/`. Abriu o PR? Espera alguém checar. Ninguém tem permissão para dar merge no próprio código.
 
 ---
 
-## 🛠️ Regras de Versionamento e Fluxo de Trabalho
+## Primeiro Acesso 
 
-1. **Proteção da Branch `main`:** Nunca faça commits diretos na branch `main`. Toda alteração deve ser feita em uma branch separada e integrada via *Pull Request (PR)*.
-2. **Uso do `.gitignore`:** Arquivos temporários de compilação, logs e binários gerados pelo Quartus, Vivado ou ModelSim não devem ser enviados ao repositório. O arquivo `.gitignore` na raiz já está configurado para filtrar esses arquivos automaticamente.
-3. **Validação:** Qualquer módulo de hardware escrito na pasta `hdl/` só poderá ser integrado à `main` após a criação e validação do seu respectivo testbench na pasta `sim/`.
-
----
-
-## 🚀 Passo a Passo: Primeiro Acesso e Validação do Fluxo
-
-Para validarmos o fluxo de trabalho de todos na equipe antes do início do desenvolvimento dos blocos de hardware, realizaremos uma tarefa inicial simples: adicionar nossos nomes ao arquivo `CONTRIBUTORS.md`.
-
+Para testar o fluxo antes de mexer no hardware, todo mundo vai fazer o mesmo teste inicial: colocar o nome no `CONTRIBUTORS.md`
 Siga os comandos abaixo no seu terminal para realizar este processo:
 
 ### Passo 1: Clonar o Repositório
@@ -50,7 +45,7 @@ cd SAP1-VHDL
 
 ```
 
-### Passo 2: Criar sua Branch Pessoal
+### Passo 2: Criar sua Branch Pessoal:
 
 Crie e mude para uma branch com o seu nome utilizando o padrão `feature/nome-sobrenome`:
 
@@ -63,12 +58,12 @@ git checkout -b feature/seu-nome
 
 1. Abra o arquivo `CONTRIBUTORS.md`.
 2. Substitua um dos campos de marcação (*placeholders* como "Amigo A") pelo seu **Nome Completo** e o link do seu **Perfil do GitHub**.
-3. **Atenção:** Deixe a coluna de responsabilidades em branco por enquanto, pois faremos a divisão de tarefas posteriormente.
+3. **Atenção:** Deixe a coluna de responsabilidades em branco, faremos a divisão de tarefas em algum outro momento.
 4. Salve o arquivo.
 
-### Passo 4: Registrar e Enviar as Alterações
+### Passo 4: Subir Alterações
 
-Adicione o arquivo modificado, crie o commit com uma mensagem clara e envie a branch para o GitHub:
+Commite o aquivo modificado e envie a branch para o GitHub:
 
 ```bash
 git add CONTRIBUTORS.md
@@ -82,30 +77,22 @@ git push origin feature/seu-nome
 1. Acesse a página do repositório no GitHub.
 2. Clique no botão **"Compare & pull request"** que aparecerá na parte superior da tela.
 3. Insira um título direto (ex: "Adiciona [Seu Nome] ao CONTRIBUTORS") e envie o PR.
-4. O administrador do repositório revisará e fará o merge para a branch `main`.
+4. Outro membro qualquer do projeto vai checar e dar Merge com a `main`.
 
 ---
 
-## ⚖️ Implicações Legais e Direitos Autorais (Copyright)
+## Atribuição de Créditos e Licença (MIT)
 
-A inclusão de nomes no arquivo `LICENSE` (sob a licença MIT) e no arquivo `CONTRIBUTORS.md` possui implicações jurídicas reais sobre a propriedade intelectual do projeto:
-
-* **Coautoria e Propriedade Intelectual:** Perante as leis de direitos autorais (como a Lei nº 9.610/98 no Brasil e tratados internacionais), qualquer pessoa que escreva código para este repositório possui direitos morais e patrimoniais sobre a sua respectiva contribuição. A listagem oficial garante a autoria legal do seu trabalho para portfólio acadêmico e profissional.
-* **Segurança Legal com a Licença MIT:** Ao adotarmos a licença MIT em conjunto com a lista de contribuidores, estabelecemos que:
-1. Qualquer membro do grupo (ou terceiros, caso o repositório se torne público no futuro) tem permissão legal para usar, modificar e distribuir este código.
-2. Ninguém poderá ser processado pelo uso do código, pois ele é fornecido "no estado em que se encontra" (*as is*), sem garantias.
-3. Os créditos originais (os nomes listados) devem ser obrigatoriamente preservados em qualquer cópia ou derivação do projeto.
+Para garantir que todo mundo possa usar esse projeto no seu próprio portfólio para entrevistas e estágios no futuro, adotamos a **Licença MIT**:
+* **Créditos Justos:** O arquivo `CONTRIBUTORS.md` serve para documentar exatamente quem fez o quê. 
+* **Uso Livre:** A licença MIT garante que qualquer um de nós (ou quem achar o repositório no GitHub) possa usar, modificar e mostrar esse código livremente sem burocracia.
 
 
-
-```
-
-```
 ---
 
-## 📂 Guia de Uso Prático das Pastas
+## Guia de Uso Prático das Pastas:
 
-Como este é o nosso primeiro projeto de hardware em equipe, usaremos as pastas da seguinte forma para manter o desenvolvimento organizado:
+Como este é o nosso primeiro projeto de hardware, usaremos as pastas da seguinte forma para manter o desenvolvimento organizado:
 
 *   **`doc/` (Guia de Referência):** Aqui colocaremos as tabelas verdade da Unidade de Controle, a matriz de microinstruções (sinais de controle) e o conjunto de instruções (ISA) do nosso SAP-1. Sempre que houver uma alteração na arquitetura do processador, o documento nesta pasta deve ser atualizado.
 *   **`hdl/` (Apenas Código Limpo):** Esta pasta deve conter apenas os arquivos de descrição física do hardware em VHDL (`.vhd` ou `.vhdl`). Nenhum arquivo gerado por compilador deve entrar aqui.
@@ -114,15 +101,13 @@ Como este é o nosso primeiro projeto de hardware em equipe, usaremos as pastas 
 *   **`synth/` (Ambiente de Síntese):** Reservada para os arquivos de projeto das ferramentas (como o arquivo `.qpf`/`.qsf` do Quartus ou `.xpr` do Vivado). O fluxo de trabalho aqui consiste em abrir o projeto a partir desta pasta e compilar. O `.gitignore` já cuidará para que os gigabytes de arquivos temporários de síntese gerados por essas IDEs fiquem de fora do GitHub.
 *   **`schematics/` (Hardware Físico):** Espaço para os arquivos de desenho de circuito da protoboard. Quem estiver desenhando as conexões dos circuitos integrados deve salvar o arquivo original do software de CAD nesta pasta.
 
+
 ---
 
-## ⚠️ Limitações de Armazenamento (Operação Sem Git LFS)
+## ⚠️ Limitações de Armazenamento (Operação Sem Git LFS):
 
-Para simplificar o fluxo de trabalho inicial, **não estamos utilizando o Git LFS (Large File Storage)**. Isso significa que o Git tradicional tratará qualquer arquivo não textual (imagens, PDFs, binários) como um bloco único. 
-
-Se alterarmos um arquivo PDF de 5 MB e subirmos novamente, o Git salvará a versão antiga e a nova inteiras no histórico, fazendo o tamanho do repositório dobrar rapidamente.
-
-Para evitar que o repositório fique lento ou atinja o limite do GitHub, devemos seguir rigorosamente as seguintes diretrizes:
+**Não estamos utilizando o Git LFS (Large File Storage)**. 
+Para evitar que o repositório fique lento ou atinja o limite do GitHub, vamos seguir as seguintes regrinhas:
 
 1.  **Não suba Datasheets:** Nunca adicione arquivos PDF de manuais de placas de desenvolvimento ou folhas de dados de circuitos integrados (datasheets) ao repositório. Em vez disso, adicione apenas os links diretos para os documentos dos fabricantes em uma seção de referências ou dentro de um arquivo de texto.
 2.  **Otimização de Imagens e Diagramas:** Ao salvar diagramas de blocos ou capturas de tela dos esquemáticos, utilize formatos comprimidos como `.png` ou `.jpg` de resolução moderada. Evite formatos pesados e sem compressão (como `.bmp`). Tente manter qualquer imagem abaixo de **1 MB**.
