@@ -7,7 +7,7 @@ Thank you to everyone who has contributed to the SAP-1 Computer Architecture pro
 | Contributor | GitHub Profile | Role & Major Contributions |
 | :--- | :--- | :--- |
 | **João Paulo Saraiva** | [@JPauloSar](https://github.com/JPauloSar) | Git/GitHub Setup, System Architecture, and Integration. |
-| **Amigo A** | [@usuario-amigo-a](https://github.com/usuario-amigo-a) | Responsabilidades |
+| **Iury Burigo Miranda Rodrigues de Oliveira** | [@SByzyRTX](https://github.com/SByzyRTX) | Responsabilidades |
 | **Amigo B** | [@usuario-amigo-b](https://github.com/usuario-amigo-b) | Responsabilidades |
 | **Amigo C** | [@usuario-amigo-c](https://github.com/usuario-amigo-c) | Responsabilidades |
 
